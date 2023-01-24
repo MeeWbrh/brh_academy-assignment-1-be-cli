@@ -1,5 +1,5 @@
 import { Entity, Column, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
-import { ProductDescription } from './ProductDescription';
+// import { ProductDescription } from './ProductDescription';
 
 /**
  * This entity represents an ios subscription through apples in_app_purchase. 1 of these entries will be
@@ -17,12 +17,12 @@ export class IOSSubscription {
    * The product_id column references what product the current subscription unlocks.
    * The data about the product is stored in the ProductDescription entity
    */
-  @ManyToOne(() => ProductDescription)
-  @JoinColumn({
-    name: 'product_id',
-    referencedColumnName: 'product_id',
-  })
-  product: ProductDescription;
+  // @ManyToOne(() => ProductDescription)
+  // @JoinColumn({
+  //   name: 'product_id',
+  //   referencedColumnName: 'product_id',
+  // })
+  // product: ProductDescription;
 
   /**
    * The auto_renew_product_id column references what product the subscription should be changed to
@@ -30,12 +30,12 @@ export class IOSSubscription {
    * product must be available for the user until next renewal.
    * The data about the product is stored in the ProductDescription entity
    */
-  @ManyToOne(() => ProductDescription)
-  @JoinColumn({
-    name: 'auto_renew_product_id',
-    referencedColumnName: 'product_id',
-  })
-  autoRenewProduct: ProductDescription;
+  // @ManyToOne(() => ProductDescription)
+  // @JoinColumn({
+  //   name: 'auto_renew_product_id',
+  //   referencedColumnName: 'product_id',
+  // })
+  // autoRenewProduct: ProductDescription;
 
   @Column()
   will_auto_renew: boolean;
