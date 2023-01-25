@@ -1,4 +1,4 @@
-import { Entity, JoinTable, JoinColumn, OneToMany, ManyToOne, OneToOne, PrimaryGeneratedColumn, Column } from 'typeorm';
+import { Entity, JoinColumn, ManyToOne, OneToOne, PrimaryGeneratedColumn, Column } from 'typeorm';
 import { Profile } from './Profile';
 
 @Entity()
@@ -18,7 +18,7 @@ export class Pet {
   @Column()
   name: string;
 
-  @OneToOne(() => Profile, { nullable: false })
+  @ManyToOne(() => Profile, { nullable: false })
   @JoinColumn({
     name: 'profile_fk',
     referencedColumnName: 'id',

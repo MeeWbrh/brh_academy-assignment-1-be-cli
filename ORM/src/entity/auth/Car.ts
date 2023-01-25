@@ -1,5 +1,4 @@
-import { profile } from 'console';
-import { Entity, Column, JoinTable, JoinColumn, PrimaryGeneratedColumn, OneToOne, OneToMany, ManyToOne } from 'typeorm';
+import { Entity, Column, JoinColumn, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
 import { Profile } from './Profile';
 
 @Entity()
